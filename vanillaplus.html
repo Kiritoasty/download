@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Download | Kiritoasty</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -10,8 +10,10 @@
 <style>
 :root {
     --accent-color: #dbd3e0;
-    --bg-color: rgba(15, 15, 15, 0.8);
-    --blur: 10px;
+    --accent-gradient: linear-gradient(135deg, #dbd3e0, #a084c0);
+    --bg-color: rgba(15, 15, 15, 0.85);
+    --blur: 12px;
+    --shadow: 0 8px 30px rgba(0,0,0,0.5);
 }
 
 * {
@@ -21,7 +23,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: #0f0f0f;
+    background: linear-gradient(145deg, #0f0f0f 0%, #1a1a1a 100%);
     color: white;
     line-height: 1.6;
 }
@@ -49,57 +51,81 @@ a:hover::after {
 
 .main {
     max-width: 900px;
-    margin: 3rem auto;
-    padding: 2rem;
+    margin: 4rem auto;
+    padding: 3rem;
     background: var(--bg-color);
     backdrop-filter: blur(var(--blur));
-    border-radius: 20px;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
     animation: fadeIn 1s ease;
 }
 
 nav.nav {
     display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
     justify-content: center;
 }
 
 nav.nav a {
     font-weight: 600;
+    transition: transform 0.2s ease;
+}
+
+nav.nav a:hover {
+    transform: scale(1.1);
 }
 
 h1 {
     text-align: center;
     color: var(--accent-color);
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
 }
 
 .download-box {
     text-align: center;
-    margin-top: 2rem;
-    padding: 2rem;
+    margin-top: 2.5rem;
+    padding: 3rem 2rem;
     background: rgba(255,255,255,0.05);
-    border-radius: 15px;
-    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.7);
+}
+
+.download-box p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 1.5rem auto;
+    color: #ddd;
 }
 
 .download-btn {
     display: inline-block;
-    margin-top: 1rem;
-    padding: 14px 28px;
-    background: var(--accent-color);
+    padding: 16px 36px;
+    background: var(--accent-gradient);
     color: #0f0f0f;
-    font-weight: 600;
-    border-radius: 12px;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 18px;
+    transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.4);
 }
 
 .download-btn:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
+    transform: scale(1.08);
+    opacity: 0.95;
+    box-shadow: 0 8px 35px rgba(0,0,0,0.6);
 }
 
 footer {
-    margin-top: 3rem;
+    margin-top: 4rem;
     text-align: center;
     font-size: 0.9rem;
     color: #aaa;
@@ -109,6 +135,7 @@ footer {
     from {opacity: 0; transform: translateY(20px);}
     to {opacity: 1; transform: translateY(0);}
 }
+
 </style>
 </head>
 
@@ -126,9 +153,8 @@ footer {
 
 <div class="download-box">
 
-<p>A modpack created by me (Kiritoasty) that focuses mostly on improving minecraft and making it look modern although having a nice vanilla-feel, and you're able to join vanilla servers on it because all mods are client-sided.</p>
+<p>A modpack created by me (Kiritoasty) that focuses on enhancing Minecraft's visuals while keeping a vanilla feel. All mods are client-sided, so you can still join vanilla servers.</p>
 
-<!-- Change the link below to customize the download -->
 <a class="download-btn" 
    href="https://assets.kiritoasty.us/kiritoastys_vanillaplus.mrpack" 
    download>
